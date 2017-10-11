@@ -1,0 +1,7 @@
+(27/09/2017):comecei o html e o css da parte do site, proximo passo começar a implementar a parte java
+
+(02/10/2017):Centralizei a parte de loguim e implementei a parte do loguim
+
+(09/10/2017):Fiz o dao do projeto
+
+(11/10/2017):fiz as outras paginas, não estão prontas claro mas ja comecei a fazer, implementei a pagina inicial e a pagina de erro, e arrumei alguns css
