@@ -23,15 +23,7 @@ and open the template in the editor.
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     </head>
     <body>
-        <style>
-            .demo-layout-transparent {
-                background: url('../assets/demos/transparent.jpg') center / cover;
-            }
-            .demo-layout-transparent .mdl-layout__header,
-            .demo-layout-transparent .mdl-layout__drawer-button {
-                color: yellow;
-            }
-        </style>
+       
         
         <div class="demo-layout-transparent mdl-layout mdl-js-layout">
             <header class="mdl-layout__header mdl-layout__header--transparent">
