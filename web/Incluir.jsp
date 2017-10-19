@@ -54,27 +54,45 @@ and open the template in the editor.
                 </div>
                 <div class="img_formato_4" style="text-align: left ">
                     <img src="assets/coollogo_Bem.png"/> 
-                    <div style="margin-left: 60%;
-                         margin-top: 20%">
-                        <button  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                            Incluir
-                        </button>
-                    </div>
-                </div>
-                <form action="#">
-                    <div  style="margin-left: 30%
-                          ">
-                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input class="mdl-textfield__input" type="text" id="sample3">
-                            <label class="mdl-textfield__label" for="sample3">Text...</label>
+                    <form action="#">
+                        <div  style="margin-left: 40%;">
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" >
+                                <input class="mdl-textfield__input" type="text" style="color: #FFF">
+                                <label class="mdl-textfield__label" style="color: #FFF">Anime...</label>
+                            </div>
+
                         </div>
+
+                    </form>
+                    <form action="">
+                    <div style="margin-left: 60%
+                         ">
+                        
+                            <button id="demo-show-toast" class="mdl-button mdl-js-button mdl-button--raised" type="button" style="color: #FFF">Incluir</button>
+                            <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+                                <div class="mdl-snackbar__text"></div>
+                                <button class="mdl-snackbar__action" type="button"></button>
+                            </div>
+                            <script>
+                                (function () {
+                                    'use strict';
+                                    window['counter'] = 0;
+                                    var snackbarContainer = document.querySelector('#demo-toast-example');
+                                    var showToastButton = document.querySelector('#demo-show-toast');
+                                    showToastButton.addEventListener('click', function () {
+                                        'use strict';
+                                        var data = {message: 'Example Message # ' + ++counter};
+                                        snackbarContainer.MaterialSnackbar.showSnackbar(data);
+                                    });
+                                }());
+                            </script>
+                      
+
                     </div>
-
-                </form>
+                          </form>
+                </div>
             </main>
-
-
-
 
         </div>
 

@@ -12,7 +12,7 @@ import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
-import controlador.Anime;
+import DTO.Anime;
 
 /**
  *
