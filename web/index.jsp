@@ -6,16 +6,18 @@ and open the template in the editor.
 -->
 <html>
     <head>
+        <title>Lista Anime</title>
         <link href="Css/fundo.css" rel="stylesheet">
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
     </head>
-  
+
     <body>
         <div  style="margin-left: 40%;
               margin-top: 5%">
             <form name="form_registro" action="controladorLogin" method="post">
+                <!-- FAB button with ripple -->
 
                 <input  type="text" id="login_user" name="login" >
                 <label style="color:#ffffff">Login</label>

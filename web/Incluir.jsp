@@ -13,7 +13,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Pizza Sabor Zumbi</title>
+        <title>Lista Anime</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -23,16 +23,19 @@ and open the template in the editor.
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     </head>
     <body>
-        
-        
+
+
+        <!-- Accent-colored raised button with ripple -->
+
         <div class="demo-layout-transparent mdl-layout mdl-js-layout">
             <header class="mdl-layout__header mdl-layout__header--transparent">
                 <div class="mdl-layout__header-row">
-                    <!-- Title -->
+
                     <span class="mdl-layout-title">Menu</span>
                 </div>
             </header>
             <div class="mdl-layout__drawer">
+
                 <span class="mdl-layout-title">Menu</span>
                 <nav class="mdl-navigation">
                     <a class="mdl-navigation__link" href="Inicial.jsp">Página Inicial</a>
@@ -44,17 +47,36 @@ and open the template in the editor.
                     <a class="mdl-navigation__link" href="index.jsp">Logout</a>
                 </nav>
             </div>
-            
-            <main class="mdl-layout__content">
-                <img src="assets/coollogo3.png" class="displayed"/>
+
+            <main class="mdl-layout__content">  <img src="assets/coollogo3.png" class="displayed"/>
                 <div class="img_formato_3">
                     <img src="assets/coollogo_Vindo.png"/>
                 </div>
                 <div class="img_formato_4" style="text-align: left ">
-                    <img src="assets/coollogo_Bem.png"/>                    
+                    <img src="assets/coollogo_Bem.png"/> 
+                    <div style="margin-left: 60%;
+                         margin-top: 20%">
+                        <button  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                            Incluir
+                        </button>
+                    </div>
                 </div>
-                
+                <form action="#">
+                    <div  style="margin-left: 30%
+                          ">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="sample3">
+                            <label class="mdl-textfield__label" for="sample3">Text...</label>
+                        </div>
+                    </div>
+
+                </form>
             </main>
+
+
+
+
         </div>
+
     </body>
 </html>
