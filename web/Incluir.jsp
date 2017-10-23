@@ -23,8 +23,7 @@ and open the template in the editor.
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     </head>
     <body>
-
-
+        
         <!-- Accent-colored raised button with ripple -->
 
         <div class="demo-layout-transparent mdl-layout mdl-js-layout">
@@ -58,8 +57,41 @@ and open the template in the editor.
                         <div  style="margin-left: 40%;">
 
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" >
-                                <input class="mdl-textfield__input" type="text" style="color: #FFF">
-                                <label class="mdl-textfield__label" style="color: #FFF">Anime...</label>
+                                <input class="mdl-textfield__input" type="text" style="color: #01adef">
+                                <label class="mdl-textfield__label" style="color: #FFF">Nome do Anime...</label>
+                            </div>
+
+                        </div>
+
+                    </form>
+                    <form action="#">
+                        <div  style="margin-left: 40%;">
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" >
+                                <input class="mdl-textfield__input" type="text" style="color: #01adef" >
+                                <label class="mdl-textfield__label" style="color: #FFF">Autor do Anime...</label>
+                            </div>
+
+                        </div>
+
+                    </form>
+                    <form action="#">
+                        <div  style="margin-left: 40%;">
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" >
+                                <input class="mdl-textfield__input" type="text" style="color: #01adef">
+                                <label class="mdl-textfield__label" style="color: #FFF">Ano do Anime...</label>
+                            </div>
+
+                        </div>
+
+                    </form>
+                    <form action="#">
+                        <div  style="margin-left: 40%;">
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" >
+                                <input class="mdl-textfield__input" type="text" style="color: #01adef">
+                                <label class="mdl-textfield__label" style="color: #FFF">Genero do Anime...</label>
                             </div>
 
                         </div>
@@ -82,7 +114,7 @@ and open the template in the editor.
                                     var showToastButton = document.querySelector('#demo-show-toast');
                                     showToastButton.addEventListener('click', function () {
                                         'use strict';
-                                        var data = {message: 'Example Message # ' + ++counter};
+                                        var data = {message: 'Adicionado com sucesso # ' };
                                         snackbarContainer.MaterialSnackbar.showSnackbar(data);
                                     });
                                 }());
@@ -90,7 +122,7 @@ and open the template in the editor.
                       
 
                     </div>
-                          </form>
+                  </form>
                 </div>
             </main>
 
