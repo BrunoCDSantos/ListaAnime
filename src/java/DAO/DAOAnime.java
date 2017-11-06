@@ -23,7 +23,7 @@ public class DAOAnime {
 
     String nomeArq = System.getProperty("user.home")
             + System.getProperty("file.separator") + "livros.xml";
-    static ArrayList<Anime> retorno = new ArrayList();
+    public static ArrayList<Anime> retorno = new ArrayList();
 
     public ArrayList<Anime> carregaAnime() {
 
@@ -39,7 +39,7 @@ public class DAOAnime {
         return retorno;
     }
 
-    public void salvaAnime(ArrayList<Anime> livros) {
+    public void salvaListaAnime(ArrayList<Anime> livros) {
         try {
             FileOutputStream fos = new FileOutputStream(nomeArq);
             BufferedOutputStream bos = new BufferedOutputStream(fos);
@@ -67,15 +67,20 @@ public class DAOAnime {
 
     public Anime buscaAnimeporAutor(String procurado) {
         ArrayList<Anime> animes = carregaAnime();
-        for (Anime livro : animes) {
-            if (livro.getAutor().equals(procurado)) {
-                return livro;
+        for (Anime anime : animes) {
+            if (anime.getAutor().equals(procurado)) {
+                return anime;
             }
         }
 
         return null;
     }
-
+    public void mostrar (){
+        ArrayList<Anime> animes = carregaAnime();
+        for (Anime anime : animes) {
+            System.out.println(anime.getNome());
+        }
+    }
     public void atualizaLivro(Anime novo) {
         ArrayList<Anime> animes = carregaAnime();
         Anime velho = null;
@@ -93,7 +98,7 @@ public class DAOAnime {
             animes.add(novo);
         }
 
-        salvaAnime(animes);
+        salvaListaAnime(animes);
     }
 
     public void removerAnime(Anime excluir) {
@@ -110,26 +115,31 @@ public class DAOAnime {
             animes.remove(paraRemover);
         }
 
-        salvaAnime(animes);
+        salvaListaAnime(animes);
     }
 
+    public void adicionarAnime(Anime adicionar){
+        ArrayList<Anime> animes = carregaAnime();
+        animes.add(adicionar);
+        salvaListaAnime(animes);        
+    }
     public static void main(String[] args) {
-        Scanner bru = new Scanner(System.in);
+        DAOAnime nk = new DAOAnime();
         Anime n = new Anime();
         n.setNome("Bru");
         n.setAno("2000");
         n.setAutor("Bruno");
         n.setGenero("Ação");
         n.setVisto("não");
-        retorno.add(new Anime());
+        retorno.add(n);
         
         n.setNome("Brun");
         n.setAno("2000");
         n.setAutor("Brun");
         n.setGenero("Ação");
         n.setVisto("não");
-        retorno.add(new Anime());
-        
+        retorno.add(n);
+        nk.mostrar();
     }
 
 }
