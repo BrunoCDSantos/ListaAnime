@@ -52,7 +52,7 @@ and open the template in the editor.
                 <div  style="margin-left: 40%;">
 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" >
-                        <input class="mdl-textfield__input" type="text" style="color: #01adef">
+                        <input class="mdl-textfield__input" type="text" style="color: #01adef" name="AddNome">
                         <label class="mdl-textfield__label" style="color: #FFF">Nome do Anime...</label>
                     </div>
 

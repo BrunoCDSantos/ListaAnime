@@ -12,7 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import DAO.DAOAnime;
+import DTO.Anime;
 /**
  *
  * @author informatica
@@ -24,9 +24,7 @@ public class IncluirAnime extends HttpServlet {
          throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            DAOAnime dao = new DAOAnime();
-         
-            
+            System.out.println("oi");
             
         }
     }
