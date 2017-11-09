@@ -47,7 +47,7 @@ and open the template in the editor.
                 </nav>
             </div>
 
-            <form name="form_registro" action="controladorLogin" method="post">
+            <form name="form_registro" action="teste" method="post">
 
                 <div  style="margin-left: 40%;">
 
@@ -60,8 +60,8 @@ and open the template in the editor.
                 <div  style="margin-left: 40%;">
 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" >
-                        <input class="mdl-textfield__input" type="text" style="color: #01adef" >
-                        <label class="mdl-textfield__label" style="color: #FFF">Autor do Anime...</label>
+                        <input class="mdl-textfield__input" type="text" style="color: #01adef" name="AddAtor" >
+                        <label class="mdl-textfield__label" style="color: #FFF">Ator do Anime...</label>
                     </div>
 
                 </div>
@@ -71,7 +71,7 @@ and open the template in the editor.
                 <div  style="margin-left: 40%;">
 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" >
-                        <input class="mdl-textfield__input" type="text" style="color: #01adef">
+                        <input class="mdl-textfield__input" type="text" style="color: #01adef" name="AddAno">
                         <label class="mdl-textfield__label" style="color: #FFF">Ano do Anime...</label>
                     </div>
 
@@ -80,7 +80,7 @@ and open the template in the editor.
                 <div  style="margin-left: 40%;">
 
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" >
-                        <input class="mdl-textfield__input" type="text" style="color: #01adef">
+                        <input class="mdl-textfield__input" type="text" style="color: #01adef" name="AddGenero">
                         <label class="mdl-textfield__label" style="color: #FFF">Genero do Anime...</label>
                     </div>
 

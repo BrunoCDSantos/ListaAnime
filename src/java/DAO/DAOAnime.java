@@ -13,7 +13,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import DTO.Anime;
-import java.util.Scanner;
 
 /**
  *
@@ -22,7 +21,7 @@ import java.util.Scanner;
 public class DAOAnime {
 
     String nomeArq = System.getProperty("user.home")
-            + System.getProperty("file.separator") + "livros.xml";
+            + System.getProperty("file.separator") + "Anime.xml";
     public static ArrayList<Anime> retorno = new ArrayList();
 
     public ArrayList<Anime> carregaAnime() {
@@ -125,21 +124,9 @@ public class DAOAnime {
     }
     public static void main(String[] args) {
         DAOAnime nk = new DAOAnime();
-        Anime n = new Anime();
-        n.setNome("Bru");
-        n.setAno("2000");
-        n.setAutor("Bruno");
-        n.setGenero("Ação");
-        n.setVisto("não");
-        retorno.add(n);
         
-        n.setNome("Brun");
-        n.setAno("2000");
-        n.setAutor("Brun");
-        n.setGenero("Ação");
-        n.setVisto("não");
-        retorno.add(n);
         nk.mostrar();
+   
     }
 
 }

@@ -13,19 +13,40 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import DTO.Anime;
+import DAO.DAOAnime;
+import javax.servlet.RequestDispatcher;
 /**
  *
  * @author informatica
  */
-@WebServlet(name = "IncluirAnime", urlPatterns = {"/IncluirAnime"})
-public class IncluirAnime extends HttpServlet {
+@WebServlet(name = "teste", urlPatterns = {"/teste"})
+public class teste extends HttpServlet {
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-         throws ServletException, IOException {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            System.out.println("oi");
-            
+            /* TODO output your page here. You may use following sample code. */
+           Anime anime = new Anime();
+           DAOAnime salvarAnime = new DAOAnime();
+           anime.setNome(request.getParameter("AddNome"));
+           anime.setAutor(request.getParameter("AddAtor"));
+           anime.setAno(request.getParameter("AddAno"));
+           anime.setGenero(request.getParameter("AddGenero"));
+           salvarAnime.adicionarAnime(anime);
+           RequestDispatcher rd = request.getRequestDispatcher("Incluir.jsp");
+           rd.forward(request, response);
+                
+           
         }
     }
 
