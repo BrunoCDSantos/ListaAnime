@@ -23,8 +23,8 @@ and open the template in the editor.
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     </head>
     <body>
-       
-        
+
+
         <div class="demo-layout-transparent mdl-layout mdl-js-layout">
             <header class="mdl-layout__header mdl-layout__header--transparent">
                 <div class="mdl-layout__header-row">
@@ -44,17 +44,17 @@ and open the template in the editor.
                     <a class="mdl-navigation__link" href="index.jsp">Logout</a>
                 </nav>
             </div>
-            
-            <main class="mdl-layout__content">
-                <img src="assets/coollogo3.png" class="displayed"/>
-                <div class="img_formato_3">
-                    <img src="assets/coollogo_Vindo.png"/>
+            <form name="form_Exclusao" action="Excluir" method="post">
+
+                <div  style="margin-left: 40%;">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" >
+                        <input class="mdl-textfield__input" type="text" style="color: #01adef" name="ExcNome">
+                        <label class="mdl-textfield__label" style="color: #FFF">Nome do Anime...</label>
+                    </div>
+                    <button id="demo-show-toast" class="mdl-button mdl-js-button mdl-button--raised" type="submit" style="color: #FFF">Excluir</button>
+
                 </div>
-                <div class="img_formato_4" style="text-align: left ">
-                    <img src="assets/coollogo_Bem.png"/>                    
-                </div>
-                
-            </main>
+            </form>
         </div>
     </body>
 </html>

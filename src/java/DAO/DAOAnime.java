@@ -74,12 +74,14 @@ public class DAOAnime {
 
         return null;
     }
-    public void mostrar (){
+
+    public void mostrar() {
         ArrayList<Anime> animes = carregaAnime();
         for (Anime anime : animes) {
             System.out.println(anime.getNome());
         }
     }
+
     public void atualizaLivro(Anime novo) {
         ArrayList<Anime> animes = carregaAnime();
         Anime velho = null;
@@ -100,12 +102,14 @@ public class DAOAnime {
         salvaListaAnime(animes);
     }
 
-    public void removerAnime(Anime excluir) {
+    public boolean removerAnime(Anime excluir) {
         ArrayList<Anime> animes = carregaAnime();
+        boolean removido = false;
         Anime paraRemover = null;
         for (Anime anime : animes) {
-            if (anime.getNome() == excluir.getNome()) {
+            if (anime.getNome().equals(excluir.getNome())) {
                 paraRemover = anime;
+                removido = true;
                 break;
             }
         }
@@ -115,18 +119,30 @@ public class DAOAnime {
         }
 
         salvaListaAnime(animes);
+        return removido;
     }
 
-    public void adicionarAnime(Anime adicionar){
+    public boolean adicionarAnime(Anime adicionar) {
+        boolean existente = false;
+
         ArrayList<Anime> animes = carregaAnime();
+        for (Anime anime : retorno) {
+            if (anime.getNome().equals(adicionar.getNome())) {
+                existente = true;             
+                return existente;
+            }
+        }
+        
         animes.add(adicionar);
-        salvaListaAnime(animes);        
+        salvaListaAnime(animes);
+        return existente;
     }
+
     public static void main(String[] args) {
         DAOAnime nk = new DAOAnime();
-        
+
         nk.mostrar();
-   
+
     }
 
 }

@@ -4,6 +4,7 @@
     Author     : informatica
 --%>
 
+<%@page import=" Erro.Erros"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,8 +15,14 @@
     </head>
     <body>
         <h1>Bom dia, tarde ou qualquer coisa</h1>
+        <%
+            Erros e = (Erros) request.getAttribute("erro");
+            out.println(e.getErro());
+        %>
         <br>
-        <h3> Você foi burro o suficiente para cair nesta página,</h3>
-        <h3>por favor verifique sua lógica ou sua senha</h3>
+        <a href="javascript:history.back();" style="color: #000">
+            Voltar
+        </a>
+        <br>
     </body>
 </html>

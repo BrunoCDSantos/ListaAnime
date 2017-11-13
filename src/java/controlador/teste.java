@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import DTO.Anime;
 import DAO.DAOAnime;
+import Erro.Erros;
 import javax.servlet.RequestDispatcher;
 /**
  *
@@ -33,8 +34,11 @@ public class teste extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        Erros erro = new Erros("");
+        String pagina;
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            boolean AnimeExistente;
             /* TODO output your page here. You may use following sample code. */
            Anime anime = new Anime();
            DAOAnime salvarAnime = new DAOAnime();
@@ -42,8 +46,15 @@ public class teste extends HttpServlet {
            anime.setAutor(request.getParameter("AddAtor"));
            anime.setAno(request.getParameter("AddAno"));
            anime.setGenero(request.getParameter("AddGenero"));
-           salvarAnime.adicionarAnime(anime);
-           RequestDispatcher rd = request.getRequestDispatcher("Incluir.jsp");
+           AnimeExistente = salvarAnime.adicionarAnime(anime);
+            if (AnimeExistente) {
+                erro.setErro("Este anime já existe na lista.Por favor adicione outro.");
+		pagina = "Erro.jsp";
+		request.setAttribute("erro", erro);
+            }else{
+                pagina = "Incluir.jsp";
+            }
+           RequestDispatcher rd = request.getRequestDispatcher(pagina);
            rd.forward(request, response);
                 
            

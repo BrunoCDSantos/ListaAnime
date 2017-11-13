@@ -5,9 +5,11 @@
  */
 package controlador;
 
+import DAO.DAOAnime;
+import DTO.Anime;
+import Erro.Erros;
 import java.io.IOException;
 import java.io.PrintWriter;
-import Erro.Erros;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,31 +19,44 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Bruno dos Santos
+ * @author bruno
  */
-@WebServlet(name = "controladorLogin", urlPatterns = {"/controladorLogin"})
-public class controladorLogin extends HttpServlet {
+@WebServlet(name = "Excluir", urlPatterns = {"/Excluir"})
+public class Excluir extends HttpServlet {
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+    Erros erro = new Erros("");
+        String pagina;
         response.setContentType("text/html;charset=UTF-8");
-        Erros erro = new Erros("");
         try (PrintWriter out = response.getWriter()) {
-            String nomeUsuario = request.getParameter("login");
-            String senha = request.getParameter("senha");
-            System.out.println(request.getParameter("senha"));
-            System.out.println(request.getParameter("login"));
-            String pagina = "";
-            if (nomeUsuario.equalsIgnoreCase("Brunokkkk") && senha.equals("BruBru9")) {
-                pagina = "Inicial.jsp";
-
-            } else {
-                erro.setErro("Este login não existe, por favor verifique sua lógica ou sua senha.");
+            boolean AnimeExcluido;
+            /* TODO output your page here. You may use following sample code. */
+           Anime anime = new Anime();
+           DAOAnime salvarAnime = new DAOAnime();
+           anime.setNome(request.getParameter("ExcNome"));
+           AnimeExcluido = salvarAnime.removerAnime(anime);
+            if (AnimeExcluido) {
+                pagina = "Excluir.jsp";
+                
+            }else{
+                erro.setErro("Este anime não existe na lista.Por favor adicione este anime.");
 		pagina = "Erro.jsp";
 		request.setAttribute("erro", erro);
             }
-            RequestDispatcher rd = request.getRequestDispatcher(pagina);
-            rd.forward(request, response);
+           RequestDispatcher rd = request.getRequestDispatcher(pagina);
+           rd.forward(request, response);
+                
+           
         }
     }
 

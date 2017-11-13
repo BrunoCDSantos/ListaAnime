@@ -91,20 +91,6 @@ and open the template in the editor.
 
                     <button id="demo-show-toast" class="mdl-button mdl-js-button mdl-button--raised" type="submit" style="color: #FFF">Incluir</button>
                   
-                        <script>
-                           (function () {
-                               'use strict';
-                               window['counter'] = 0;
-                               var snackbarContainer = document.querySelector('#demo-toast-example');
-                               var showToastButton = document.querySelector('#demo-show-toast');
-                               showToastButton.addEventListener('click', function () {
-                                   'use strict';
-                                   var data = {message: 'Adicionado com sucesso'};
-                                   snackbarContainer.MaterialSnackbar.showSnackbar(data);
-                               });
-                           }());
-                       </script>
-
 
                 </div>
             </form>
